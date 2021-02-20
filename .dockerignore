@@ -1,0 +1,10 @@
+.idea
+.git
+.gitignore
+poetry.lock
+pyproject.toml
+Dockerfile
+.dockerignore
+project/db.sqlite3
+LICENSE.txt
+README.md
