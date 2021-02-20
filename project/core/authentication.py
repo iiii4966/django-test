@@ -13,8 +13,6 @@ class JWTAuthenticator:
     TODO: to decorator
     """
 
-    __slots__ = 'func',
-
     AUTH_HEADER_NAME = 'Authorization'
     TOKEN_PREFIX = 'Bearer'
     USER_ID_CLAIM = 'user_id'
