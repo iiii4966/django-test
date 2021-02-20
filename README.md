@@ -8,7 +8,7 @@ __This is the personal CRUD api project using python web framework django.__
 
 ### Prerequisites
 
-* Python 3.8 or higher
+* Python 3.8.6 or higher
     ```sh
     python --version
     ```
@@ -36,15 +36,29 @@ __This is the personal CRUD api project using python web framework django.__
 2. Install packages  
    if poetry installed  
    ```shell script
-   poetry add `cat requirements.txt`
+   poetry install
    ```
-   or not
-   ```sh
-   pip install -r requirements.txt
+   If there is an error below while installing the dependencies,
+   ```shell script
+   The current project's Python requirement (2.7.17) is not compatible
+   with some of the required packages Python requirement:
+   ...
+   ```
+   Change the poetry file header in the poetry installation path
+   ```shell script
+   ~/.poetry/bin/poetry
+   ```
+   ```shell script
+   #!/usr/bin/env python -> #!/usr/bin/env python3 
    ```
 
 <!-- USAGE EXAMPLES -->
 ### Usage
+
+__If you're using poetry as a virtualenv, execute the command below.__
+```shell script
+poetry shell
+```
 
 #### run migration
 ```shell script
