@@ -17,7 +17,7 @@ __This is the personal CRUD api project using python web framework django.__
     ```sh
     https://python-poetry.org/docs/
     ```
-    - after install, set the below on the bash or zsh and so on  
+    - after install, set the below on the .bashrc or .zshrc and so on  
     ```sh
     plugins=(
         ...
@@ -84,7 +84,9 @@ make docker-local
 make docker-prod
 ```
 
-<!-- LICENSE -->
 ## License
 
 Distributed under the DSF License. See `LICENSE` for more information.
+
+## TODO
+- [ ] docker-compose with nginx, postgresql 
