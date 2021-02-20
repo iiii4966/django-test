@@ -21,7 +21,8 @@ COPY --from=builder /usr/src/project /home/app/
 COPY --from=builder /usr/local/bin/ /usr/local/bin
 COPY --from=builder /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
 
-RUN ./manage.py makemigrations && ./manage.py migrate
+RUN ./manage.py makemigrations && ./manage.py migrate && \
+    chown app:app db.sqlite3
 
 USER app
 
