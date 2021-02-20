@@ -78,6 +78,7 @@ class JWTAuthenticator:
 
 
 def jwt_authenticate(view_func):
+
     @wraps(view_func)
     def wrapper(view_obj, request, *args, **kwargs):
         if JWTAuthenticator.authenticate(request):

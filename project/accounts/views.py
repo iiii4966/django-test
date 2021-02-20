@@ -1,7 +1,8 @@
-from django.http import JsonResponse, \
-    HttpResponseBadRequest, \
+from django.http import (
+    JsonResponse,
+    HttpResponseBadRequest,
     HttpResponseNotAllowed
-from django.views.decorators.csrf import csrf_exempt
+)
 
 from accounts.models import User
 from core.authentication import JWTAuthenticator
@@ -24,4 +25,4 @@ def signup(request):
         )
 
         return JsonResponse(data={'user_id': user.id, 'token': JWTAuthenticator.encode_token(user=user)})
-    return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+    return HttpResponseNotAllowed(permitted_methods=['POST'])

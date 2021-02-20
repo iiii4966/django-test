@@ -11,6 +11,7 @@ class AccountsTest(TestCase):
         assert response.status_code == 200
         assert json.loads(response.getvalue()).get('token') is not None
 
+        # duplicated username
         response = self.client.post(path=reverse('signup'), data={'username': 'gapgit', 'password': 1234})
         assert response.status_code == 400
         assert response.getvalue().decode() == 'Duplicate email'
