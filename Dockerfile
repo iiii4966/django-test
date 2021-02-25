@@ -1,5 +1,6 @@
 FROM python:3.8.0-slim as builder
 
+# TODO: version specification
 RUN apt-get update \
         && apt-get install gcc -y \
         && apt-get clean
@@ -24,6 +25,6 @@ COPY --from=builder /usr/local/lib/python3.8/site-packages /usr/local/lib/python
 
 USER app
 
-CMD ["gunicorn", "--bind=0.0.0.0", "--timeout=200", "project.wsgi"]
-
 EXPOSE 8000
+
+CMD ["gunicorn", "--bind=0.0.0.0", "--timeout=200", "project.wsgi"]

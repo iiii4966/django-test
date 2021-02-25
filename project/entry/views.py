@@ -19,15 +19,12 @@ class PostCreateListView(View):
     @jwt_authenticate
     def post(self, request):
         content = request.POST.get('content')
-
         if content is None:
             return HttpResponseBadRequest(content='Invalid request body')
-
         post = Post.objects.create(
             user=request.user,
             content=content,
         )
-
         return JsonResponse(data=post.to_dict)
 
     def get(self, request):
@@ -60,14 +57,16 @@ class PostDetailView(View):
 
     @jwt_authenticate
     def patch(self, request, post_id):
+        body = json.loads(request.body)
+        content = body.get('content')
+        if content is None:
+            return HttpResponseBadRequest(content='Invalid request body')
+
         post = Post.objects.filter(id=post_id).first()
         if post is None:
             return HttpResponseNotFound(content='Not exist post')
+
         if request.user.is_owner(post):
-            body = json.loads(request.body)
-            content = body.get('content')
-            if content is None:
-                return HttpResponseBadRequest(content='Invalid request body')
             post.content = content
             post.save(update_fields=['content'])
             return JsonResponse(status=200, data=post.to_dict)
