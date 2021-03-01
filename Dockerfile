@@ -15,6 +15,7 @@ COPY . /usr/src/
 
 FROM python:3.8.0-slim
 
+RUN apt-get update && apt-get install curl -y
 RUN addgroup appgroup && adduser app
 
 WORKDIR /home/app
@@ -28,3 +29,6 @@ USER app
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind=0.0.0.0", "--timeout=200", "project.wsgi"]
+
+HEALTHCHECK  --interval=10s --timeout=3s \
+                CMD curl http://0.0.0.0:8000/ || exit 1
