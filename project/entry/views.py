@@ -1,4 +1,5 @@
 import json
+from multiprocessing import pool
 
 from django.http import (
     JsonResponse,
@@ -70,4 +71,5 @@ class PostDetailView(View):
             post.content = content
             post.save(update_fields=['content'])
             return JsonResponse(status=200, data=post.to_dict)
+
         return HttpResponseForbidden()
