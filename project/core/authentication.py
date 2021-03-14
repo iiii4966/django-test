@@ -17,7 +17,7 @@ class JWTAuthenticator:
     TOKEN_PREFIX = 'Bearer'
     USER_ID_CLAIM = 'user_id'
     USER_ID_FIELD = 'id'
-    HASH_ALGORITHEM = 'HS256'
+    HASH_ALGORITHM = 'HS256'
 
     @classmethod
     def authenticate(cls, request):
@@ -54,7 +54,7 @@ class JWTAuthenticator:
     @classmethod
     def decode_token(cls, raw_token):
         try:
-            return jwt.decode(raw_token.encode(), settings.SECRET_KEY, cls.HASH_ALGORITHEM)
+            return jwt.decode(raw_token.encode(), settings.SECRET_KEY, cls.HASH_ALGORITHM)
         except (DecodeError, ExpiredSignatureError):
             return None
 
