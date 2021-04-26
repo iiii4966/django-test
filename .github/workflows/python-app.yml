@@ -33,7 +33,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: configure django env
       env:
-        DJANGO_SETTINGS_MODULE: project.project.settings
+        DJANGO_SETTINGS_MODULE: project.settings
       run: |
         export DJANGO_SETTINGS_MODULE=project.settings
     - name: Test with pytest
