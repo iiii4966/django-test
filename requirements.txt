@@ -1,16 +1,25 @@
-asgiref==3.3.1; python_version >= "3.6"
-bcrypt==3.2.0; python_version >= "3.6"
-certifi==2020.12.5; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-cffi==1.14.5; python_version >= "3.6"
-chardet==4.0.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-django-cors-headers==3.7.0; python_version >= "3.6"
-django==3.1.7; python_version >= "3.6"
-gunicorn==20.0.4; python_version >= "3.4"
-idna==2.10; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
-pyjwt==2.0.1; python_version >= "3.6"
-pytz==2021.1; python_version >= "3.6"
-requests==2.25.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-six==1.15.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
-sqlparse==0.4.1; python_version >= "3.6"
-urllib3==1.26.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
+asgiref==3.3.1
+attrs==20.3.0
+bcrypt==3.2.0
+certifi==2020.12.5
+cffi==1.14.5
+chardet==4.0.0
+Django==3.1.7
+django-cors-headers==3.7.0
+gunicorn==20.0.4
+idna==2.10
+iniconfig==1.1.1
+packaging==20.9
+pluggy==0.13.1
+py==1.10.0
+pycparser==2.20
+PyJWT==2.0.1
+pyparsing==2.4.7
+pytest==6.2.3
+pytest-django==4.2.0
+pytz==2021.1
+requests==2.25.1
+six==1.15.0
+sqlparse==0.4.1
+toml==0.10.2
+urllib3==1.26.3
