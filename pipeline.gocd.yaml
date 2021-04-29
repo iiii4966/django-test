@@ -10,7 +10,7 @@ pipelines:
         git: https://github.com/iiii4966/django-test
         shallow_clone: false
         auto_update: true
-        branch: *
+        branch: master
     stages:
     - test1:
         fetch_materials: true
