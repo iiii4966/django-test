@@ -1,0 +1,30 @@
+format_version: 10
+pipelines:
+  test-master:
+    group: My-Pipelines
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-12537e4:
+        git: https://github.com/iiii4966/django-test
+        shallow_clone: false
+        auto_update: true
+        branch: *
+    stages:
+    - test1:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          test1:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - test
+                command: ./manage.py
+                run_if: passed
