@@ -26,5 +26,5 @@ pipelines:
             - exec:
                 arguments:
                 - test
-                command: ./manage.py
+                command: ./manage.py test
                 run_if: passed
